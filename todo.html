@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Tasks</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
       --border: #d2d2d7; --text: #1d1d1f; --text-secondary: #6e6e73; --text-muted: #aeaeb2;
       --calendar-icon: invert(0);
     }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.5; transition: background var(--transition), color var(--transition); }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.5; transition: background var(--transition), color var(--transition); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; touch-action: manipulation; }
     .app { max-width: 600px; margin: 0 auto; padding: 60px 24px 100px; }
     header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
     h1 { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; }
@@ -101,8 +101,22 @@
     @media (max-width: 480px) {
       .app { padding: 40px 16px 80px; }
       h1 { font-size: 24px; }
+      .input-row { flex-wrap: wrap; }
+      .input-row input[type="text"] { width: 100%; order: 1; }
+      .input-row select { flex: 1; min-width: 40%; }
+      .input-row .add-btn { order: 2; margin-left: auto; }
       .options-row { flex-direction: column; }
+      .options-row input[type="date"] { width: 100%; }
+      .task { padding: 12px; }
+      .task-content { min-width: 0; }
+      .task-text { font-size: 14px; }
+      .task-meta { flex-wrap: wrap; gap: 4px; }
       .task-actions { opacity: 1; }
+      .task-actions .action-btn { width: 32px; height: 32px; }
+      .modal { padding: 20px; margin: 16px; }
+      .modal-row { flex-direction: column; }
+      .modal-actions { flex-direction: column; }
+      .modal-btn { width: 100%; }
     }
   </style>
 </head>
